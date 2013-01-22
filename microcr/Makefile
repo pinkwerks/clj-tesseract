@@ -1,7 +1,11 @@
 INCLUDES = -I/usr/local/Cellar/tesseract/3.00/include/tesseract `pkg-config --cflags opencv`
+INCLUDES = `pkg-config --cflags opencv tesseract`
 LIBS = -L/usr/local/Cellar/tesseract/3.00/lib -ltesseract_api `pkg-config --libs opencv`
+LIBS = `pkg-config --libs opencv tesseract`
 DYLIB = -arch x86_64 -dynamiclib -o libmicrocr.dylib
+DYLIB = -o libmicrocr.so
 INSTALL_PATH = -install_name /usr/local/lib/microcr/libmicrocr.dylib
+INSTALL_PATH =
 CC = g++
 
 all: libmicrocr microcr clean_obj
