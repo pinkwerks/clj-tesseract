@@ -4,4 +4,6 @@ pom.xml
 lib
 classes
 target
+microcr
+libmicrocr.so
 
